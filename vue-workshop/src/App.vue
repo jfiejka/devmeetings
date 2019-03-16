@@ -10,6 +10,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  mounted(){
+    this.$store.dispatch('user/setUserId', '123ads');
+  }
+}
+</script>
+
+
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
