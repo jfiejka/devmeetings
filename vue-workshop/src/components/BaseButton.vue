@@ -1,7 +1,9 @@
 <template>
   <button :disabled="isLoading">
     <span v-if="loading">Loading</span>
-    <span v-else>{{ text }}</span>
+    <span v-else>
+      <slot/>
+    </span>
   </button>
 </template>
 <script>
@@ -20,7 +22,7 @@ export default {
     }
   },
   computed: {
-    isLoading: function () {
+    isLoading: function() {
       return this.loading || this.$attrs.disabled;
     }
   }

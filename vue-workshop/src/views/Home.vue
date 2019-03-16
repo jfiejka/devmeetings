@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <p>HOME VIEW</p>
-    <BaseButton :loading="loading" text="Mój button"/>
+    <BaseButton :loading="loading" text="Mój button" @click.native="change"> Dupa </BaseButton>
   </div>
 </template>
 
@@ -15,8 +15,8 @@ export default {
     BaseButton
   },
   methods: {
-    log() {
-      console.log(this.$attrs);
+    change() {
+      this.loading = !this.loading 
     }
   },
   data() {
