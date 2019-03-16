@@ -1,17 +1,28 @@
 <template>
   <div class="home">
     <p>HOME VIEW</p>
+    <BaseButton :loading="loading" text="Mój button"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import BaseButton from "@/components/BaseButton.vue";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
-    HelloWorld,
+    BaseButton
   },
+  methods: {
+    log() {
+      console.log(this.$attrs);
+    }
+  },
+  data() {
+    return {
+      loading: false
+    };
+  }
 };
 </script>
